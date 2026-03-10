@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Profit Calculator</title>
+<style>
+body{font-family:Arial;text-align:center;padding:40px;background:#f4f4f4}
+input{padding:10px;margin:5px;width:220px}
+button{padding:10px 20px;background:#2c7be5;color:white;border:none}
+</style>
+</head>
+
+<body>
+
+<h1>Ecommerce Profit Calculator</h1>
+
+<input id="price" placeholder="Product price"><br>
+<input id="cost" placeholder="Product cost"><br>
+<input id="shipping" placeholder="Shipping cost"><br>
+<input id="ads" placeholder="Ad cost"><br>
+<input id="fee" placeholder="Payment fee %"><br>
+
+<br>
+
+<button onclick="calc()">Calculate Profit</button>
+
+<h2 id="result"></h2>
+
+<script>
+function calc(){
+var price=parseFloat(document.getElementById("price").value)||0;
+var cost=parseFloat(document.getElementById("cost").value)||0;
+var shipping=parseFloat(document.getElementById("shipping").value)||0;
+var ads=parseFloat(document.getElementById("ads").value)||0;
+var fee=parseFloat(document.getElementById("fee").value)||0;
+
+var payment=price*(fee/100);
+var profit=price-cost-shipping-ads-payment;
+
+document.getElementById("result").innerHTML="Profit per sale: $"+profit.toFixed(2);
+}
+</script>
+
+</body>
+</html>
