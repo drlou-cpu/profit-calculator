@@ -2,10 +2,10 @@
 <html>
 <head>
 <title>Ecommerce Profit Calculator</title>
+
 <meta name="description" content="Free ecommerce profit calculator to calculate real profit after ads, shipping and payment fees.">
 
 <style>
-
 body{
 font-family:Arial;
 background:#f4f6fb;
@@ -13,6 +13,7 @@ display:flex;
 justify-content:center;
 align-items:center;
 height:100vh;
+margin:0;
 }
 
 .container{
@@ -21,7 +22,7 @@ padding:40px;
 border-radius:10px;
 box-shadow:0 10px 30px rgba(0,0,0,0.1);
 text-align:center;
-width:320px;
+width:340px;
 }
 
 h1{
@@ -45,18 +46,18 @@ border:none;
 border-radius:6px;
 cursor:pointer;
 font-size:16px;
+margin-top:5px;
 }
 
 button:hover{
 background:#2563eb;
 }
 
-#result{
+#result,#goalresult{
 margin-top:15px;
-font-size:20px;
+font-size:18px;
 font-weight:bold;
 }
-
 </style>
 
 </head>
@@ -77,6 +78,14 @@ font-weight:bold;
 
 <h2 id="result"></h2>
 
+<br><br>
+
+<input id="goal" placeholder="Profit goal (example 1000)">
+
+<button onclick="calcGoal()">Sales needed</button>
+
+<h2 id="goalresult"></h2>
+
 </div>
 
 <script>
@@ -90,9 +99,34 @@ var ads=parseFloat(document.getElementById("ads").value)||0;
 var fee=parseFloat(document.getElementById("fee").value)||0;
 
 var payment=price*(fee/100);
+
 var profit=price-cost-shipping-ads-payment;
 
 document.getElementById("result").innerHTML="Profit per sale: $" + profit.toFixed(2);
+
+}
+
+function calcGoal(){
+
+var price=parseFloat(document.getElementById("price").value)||0;
+var cost=parseFloat(document.getElementById("cost").value)||0;
+var shipping=parseFloat(document.getElementById("shipping").value)||0;
+var ads=parseFloat(document.getElementById("ads").value)||0;
+var fee=parseFloat(document.getElementById("fee").value)||0;
+var goal=parseFloat(document.getElementById("goal").value)||0;
+
+var payment=price*(fee/100);
+
+var profit=price-cost-shipping-ads-payment;
+
+if(profit<=0){
+document.getElementById("goalresult").innerHTML="No profit per sale";
+return;
+}
+
+var sales=goal/profit;
+
+document.getElementById("goalresult").innerHTML="Sales needed: " + Math.ceil(sales);
 
 }
 
