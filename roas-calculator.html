@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>ROAS Calculator</title>
+<meta name="description" content="Calculate Return On Ad Spend (ROAS) for ecommerce campaigns.">
+
+<style>
+
+body{
+font-family:Arial;
+background:#f4f6fb;
+margin:0;
+text-align:center;
+}
+
+/* NAVBAR */
+
+nav{
+background:white;
+padding:15px 30px;
+box-shadow:0 2px 10px rgba(0,0,0,0.05);
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+nav .logo{
+font-weight:bold;
+}
+
+nav a{
+margin-left:20px;
+text-decoration:none;
+color:#333;
+font-weight:bold;
+}
+
+/* CALCULATOR CARD */
+
+.container{
+background:white;
+padding:40px;
+border-radius:10px;
+box-shadow:0 10px 30px rgba(0,0,0,0.1);
+text-align:center;
+width:350px;
+margin:60px auto;
+}
+
+input{
+width:100%;
+padding:10px;
+margin:8px 0;
+border:1px solid #ddd;
+border-radius:5px;
+}
+
+button{
+width:100%;
+padding:12px;
+background:#3b82f6;
+color:white;
+border:none;
+border-radius:6px;
+cursor:pointer;
+font-size:16px;
+margin-top:5px;
+}
+
+button:hover{
+background:#2563eb;
+}
+
+#result{
+margin-top:15px;
+font-size:20px;
+font-weight:bold;
+}
+
+.explain{
+margin-top:15px;
+color:#555;
+font-size:14px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<nav>
+<div class="logo">Ecommerce Tools</div>
+
+<div>
+<a href="index.html">Home</a>
+<a href="index.html#tools">Tools</a>
+<a href="#">About</a>
+</div>
+</nav>
+
+<div class="container">
+
+<h2>ROAS Calculator</h2>
+
+<input id="revenue" placeholder="Revenue from ads ($)">
+<input id="adspend" placeholder="Ad spend ($)">
+
+<button onclick="calc()">Calculate ROAS</button>
+
+<h3 id="result"></h3>
+
+<p class="explain">
+ROAS = Revenue ÷ Ad Spend
+</p>
+
+</div>
+
+<script>
+
+function calc(){
+
+var revenue=parseFloat(document.getElementById("revenue").value)||0;
+var adspend=parseFloat(document.getElementById("adspend").value)||0;
+
+if(adspend==0){
+document.getElementById("result").innerHTML="Enter ad spend";
+return;
+}
+
+var roas=revenue/adspend;
+
+document.getElementById("result").innerHTML="ROAS: " + roas.toFixed(2);
+
+}
+
+</script>
+
+</body>
+</html>
