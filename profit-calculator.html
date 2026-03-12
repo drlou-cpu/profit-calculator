@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Profit Calculator</title>
+
+<meta name="description" content="Calculate ecommerce profit after ads, shipping and payment fees.">
+
+<style>
+
+body{
+font-family:Arial;
+background:#f4f6fb;
+margin:0;
+text-align:center;
+}
+
+nav{
+background:white;
+padding:15px 30px;
+box-shadow:0 2px 10px rgba(0,0,0,0.05);
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+nav .logo{
+font-weight:bold;
+}
+
+nav a{
+margin-left:20px;
+text-decoration:none;
+color:#333;
+font-weight:bold;
+}
+
+.container{
+background:white;
+padding:40px;
+border-radius:10px;
+box-shadow:0 10px 30px rgba(0,0,0,0.1);
+text-align:center;
+width:350px;
+margin:60px auto;
+}
+
+input{
+width:100%;
+padding:10px;
+margin:8px 0;
+border:1px solid #ddd;
+border-radius:5px;
+}
+
+button{
+width:100%;
+padding:12px;
+background:#3b82f6;
+color:white;
+border:none;
+border-radius:6px;
+cursor:pointer;
+font-size:16px;
+margin-top:5px;
+}
+
+button:hover{
+background:#2563eb;
+}
+
+#result{
+margin-top:15px;
+font-size:18px;
+font-weight:bold;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<nav>
+
+<div class="logo">Ecommerce Tools</div>
+
+<div>
+<a href="index.html">Home</a>
+<a href="index.html#tools">Tools</a>
+<a href="#">About</a>
+</div>
+
+</nav>
+
+<div class="container">
+
+<h2>Profit Calculator</h2>
+
+<input id="price" placeholder="Product price">
+
+<input id="cost" placeholder="Product cost">
+
+<input id="shipping" placeholder="Shipping cost">
+
+<input id="ads" placeholder="Ad cost">
+
+<input id="fee" placeholder="Payment fee %">
+
+<button onclick="calc()">Calculate Profit</button>
+
+<h3 id="result"></h3>
+
+</div>
+
+<script>
+
+function calc(){
+
+var price=parseFloat(document.getElementById("price").value)||0;
+var cost=parseFloat(document.getElementById("cost").value)||0;
+var shipping=parseFloat(document.getElementById("shipping").value)||0;
+var ads=parseFloat(document.getElementById("ads").value)||0;
+var fee=parseFloat(document.getElementById("fee").value)||0;
+
+var payment=price*(fee/100);
+
+var profit=price-cost-shipping-ads-payment;
+
+document.getElementById("result").innerHTML="Profit per sale: $" + profit.toFixed(2);
+
+}
+
+</script>
+
+</body>
+</html>
