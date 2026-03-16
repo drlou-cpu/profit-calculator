@@ -1,37 +1,21 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 
-<title>Ecommerce Margin Calculator</title>
-<meta name="description" content="Calculate product profit margin for ecommerce and online stores.">
+<title>Ecommerce Profit Calculator</title>
+
+<meta name="description" content="Free ecommerce profit calculator to calculate real profit after product cost, ads, shipping and payment fees.">
 
 <style>
 
 body{
 font-family:Arial;
 background:#f4f6fb;
-margin:0;
-text-align:center;
-}
-
-nav{
-background:white;
-padding:15px 30px;
-box-shadow:0 2px 10px rgba(0,0,0,0.05);
 display:flex;
-justify-content:space-between;
+flex-direction:column;
 align-items:center;
-}
-
-nav .logo{
-font-weight:bold;
-}
-
-nav a{
-margin-left:20px;
-text-decoration:none;
-color:#333;
-font-weight:bold;
+margin:0;
 }
 
 .container{
@@ -39,104 +23,126 @@ background:white;
 padding:40px;
 border-radius:10px;
 box-shadow:0 10px 30px rgba(0,0,0,0.1);
+margin-top:60px;
 text-align:center;
-width:350px;
-margin:60px auto;
+width:340px;
 }
 
 input{
-width:100%;
-padding:10px;
+padding:12px;
 margin:8px 0;
+width:100%;
 border:1px solid #ddd;
-border-radius:5px;
+border-radius:6px;
 }
 
 button{
-width:100%;
 padding:12px;
-background:#3b82f6;
+width:100%;
+background:#3b73e0;
 color:white;
 border:none;
 border-radius:6px;
-cursor:pointer;
 font-size:16px;
-margin-top:5px;
+cursor:pointer;
 }
 
 button:hover{
-background:#2563eb;
+background:#2c5ec4;
 }
 
-#result{
+.result{
 margin-top:15px;
 font-size:20px;
 font-weight:bold;
 }
 
-.info{
-max-width:700px;
-margin:40px auto;
-text-align:left;
-line-height:1.6;
+.content{
+max-width:800px;
+margin:60px auto;
+padding:20px;
+line-height:1.7;
 }
 
 </style>
 
 </head>
 
+
 <body>
-
-<nav>
-
-<div class="logo">Ecommerce Tools</div>
-
-<div>
-<a href="index.html">Home</a>
-<a href="index.html#tools">Tools</a>
-<a href="#">About</a>
-</div>
-
-</nav>
 
 <div class="container">
 
-<h2>Ecommerce Margin Calculator</h2>
+<h2>Ecommerce Profit Calculator</h2>
 
-<input id="price" placeholder="Selling price ($)">
-<input id="cost" placeholder="Product cost ($)">
+<input id="price" placeholder="Selling price">
 
-<button onclick="calc()">Calculate Margin</button>
+<input id="cost" placeholder="Product cost">
 
-<h3 id="result"></h3>
+<input id="shipping" placeholder="Shipping cost">
+
+<input id="ads" placeholder="Ad cost">
+
+<input id="fee" placeholder="Payment fee %">
+
+<button onclick="calc()">Calculate Profit</button>
+
+<div class="result" id="result"></div>
+
+</div>
+
+
+
+<div class="content">
+
+<h2>What is ecommerce profit?</h2>
+
+<p>
+Ecommerce profit is the money you keep after subtracting all costs related to selling a product online.
+These costs usually include product cost, advertising, shipping and payment processing fees.
+</p>
+
+
+<h2>Formula</h2>
+
+<p>
+Profit = Selling price − Product cost − Shipping cost − Advertising cost − Payment fee
+</p>
+
+
+<h2>Example</h2>
+
+<p>
+If a product sells for $50, costs $20, shipping costs $5 and advertising costs $10, the profit would be $15.
+</p>
+
+
+<h2>FAQ</h2>
+
+<h3>How do you calculate ecommerce profit?</h3>
+
+<p>
+Ecommerce profit is calculated by subtracting all business costs from the selling price of the product.
+These costs include product cost, shipping, marketing and payment fees.
+</p>
+
+
+<h3>Why is profit calculation important?</h3>
+
+<p>
+Profit calculation helps store owners understand whether a product is profitable or not before scaling advertising campaigns.
+</p>
+
+
+<h3>What is a good ecommerce profit?</h3>
+
+<p>
+Many ecommerce businesses aim for a profit of at least 20–30% after all costs are included.
+</p>
 
 </div>
 
-<div class="info">
 
-<h3>What is profit margin?</h3>
-
-<p>
-Profit margin shows how much profit you make from each sale
-after subtracting the product cost.
-It helps ecommerce store owners understand if a product
-is profitable or not.
-</p>
-
-<h3>Formula</h3>
-
-<p>
-Margin % = (Selling price − Cost) ÷ Selling price × 100
-</p>
-
-<h3>Example</h3>
-
-<p>
-If a product sells for $50 and costs $20,
-the profit is $30 and the margin is 60%.
-</p>
-
-</div>
 
 <script>
 
@@ -144,19 +150,20 @@ function calc(){
 
 var price=parseFloat(document.getElementById("price").value)||0;
 var cost=parseFloat(document.getElementById("cost").value)||0;
+var shipping=parseFloat(document.getElementById("shipping").value)||0;
+var ads=parseFloat(document.getElementById("ads").value)||0;
+var fee=parseFloat(document.getElementById("fee").value)||0;
 
-if(price==0){
-document.getElementById("result").innerHTML="Enter price";
-return;
-}
+var payment=price*(fee/100);
 
-var margin=((price-cost)/price)*100;
+var profit=price-cost-shipping-ads-payment;
 
-document.getElementById("result").innerHTML="Margin: " + margin.toFixed(2) + "%";
+document.getElementById("result").innerHTML="Profit per sale: $"+profit.toFixed(2);
 
 }
 
 </script>
+
 
 </body>
 </html>
