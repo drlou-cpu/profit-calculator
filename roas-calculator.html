@@ -1,121 +1,143 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 
-<title>ROAS Calculator</title>
-<meta name="description" content="Calculate Return On Ad Spend (ROAS) for ecommerce campaigns.">
+<title>Ecommerce ROAS Calculator</title>
+
+<meta name="description" content="Free ROAS calculator to calculate return on ad spend for ecommerce campaigns.">
 
 <style>
 
 body{
 font-family:Arial;
 background:#f4f6fb;
-margin:0;
-text-align:center;
-}
-
-/* NAVBAR */
-
-nav{
-background:white;
-padding:15px 30px;
-box-shadow:0 2px 10px rgba(0,0,0,0.05);
 display:flex;
-justify-content:space-between;
+flex-direction:column;
 align-items:center;
+margin:0;
 }
-
-nav .logo{
-font-weight:bold;
-}
-
-nav a{
-margin-left:20px;
-text-decoration:none;
-color:#333;
-font-weight:bold;
-}
-
-/* CALCULATOR CARD */
 
 .container{
 background:white;
 padding:40px;
 border-radius:10px;
 box-shadow:0 10px 30px rgba(0,0,0,0.1);
+margin-top:60px;
 text-align:center;
-width:350px;
-margin:60px auto;
+width:320px;
 }
 
 input{
-width:100%;
-padding:10px;
+padding:12px;
 margin:8px 0;
+width:100%;
 border:1px solid #ddd;
-border-radius:5px;
+border-radius:6px;
 }
 
 button{
-width:100%;
 padding:12px;
-background:#3b82f6;
+width:100%;
+background:#3b73e0;
 color:white;
 border:none;
 border-radius:6px;
-cursor:pointer;
 font-size:16px;
-margin-top:5px;
+cursor:pointer;
 }
 
 button:hover{
-background:#2563eb;
+background:#2c5ec4;
 }
 
-#result{
+.result{
 margin-top:15px;
 font-size:20px;
 font-weight:bold;
 }
 
-.explain{
-margin-top:15px;
-color:#555;
-font-size:14px;
+.content{
+max-width:800px;
+margin:60px auto;
+padding:20px;
+line-height:1.7;
 }
 
 </style>
 
 </head>
 
+
 <body>
-
-<nav>
-<div class="logo">Ecommerce Tools</div>
-
-<div>
-<a href="index.html">Home</a>
-<a href="index.html#tools">Tools</a>
-<a href="#">About</a>
-</div>
-</nav>
 
 <div class="container">
 
-<h2>ROAS Calculator</h2>
+<h2>Ecommerce ROAS Calculator</h2>
 
-<input id="revenue" placeholder="Revenue from ads ($)">
-<input id="adspend" placeholder="Ad spend ($)">
+<input id="revenue" placeholder="Revenue from ads">
+
+<input id="adspend" placeholder="Ad spend">
 
 <button onclick="calc()">Calculate ROAS</button>
 
-<h3 id="result"></h3>
+<div class="result" id="result"></div>
 
-<p class="explain">
-ROAS = Revenue ÷ Ad Spend
+</div>
+
+
+
+<div class="content">
+
+<h2>What is ROAS?</h2>
+
+<p>
+ROAS (Return On Ad Spend) measures how much revenue you generate for every dollar spent on advertising.
+It is one of the most important metrics for ecommerce businesses running paid ads.
+</p>
+
+
+<h2>Formula</h2>
+
+<p>
+ROAS = Revenue from ads ÷ Ad spend
+</p>
+
+
+<h2>Example</h2>
+
+<p>
+If you spend $100 on ads and generate $400 in revenue,
+your ROAS is 4. This means you earn $4 for every $1 spent on ads.
+</p>
+
+
+<h2>FAQ</h2>
+
+<h3>What is a good ROAS?</h3>
+
+<p>
+A good ROAS depends on your profit margins, but many ecommerce businesses aim for a ROAS of 3 or higher.
+</p>
+
+
+<h3>Why is ROAS important?</h3>
+
+<p>
+ROAS helps businesses understand whether their advertising campaigns are profitable or not.
+</p>
+
+
+<h3>How do you improve ROAS?</h3>
+
+<p>
+You can improve ROAS by increasing conversion rates, reducing advertising costs,
+and optimizing product pricing and marketing strategies.
 </p>
 
 </div>
+
+
 
 <script>
 
@@ -124,18 +146,19 @@ function calc(){
 var revenue=parseFloat(document.getElementById("revenue").value)||0;
 var adspend=parseFloat(document.getElementById("adspend").value)||0;
 
-if(adspend==0){
+if(adspend===0){
 document.getElementById("result").innerHTML="Enter ad spend";
 return;
 }
 
 var roas=revenue/adspend;
 
-document.getElementById("result").innerHTML="ROAS: " + roas.toFixed(2);
+document.getElementById("result").innerHTML="ROAS: "+roas.toFixed(2);
 
 }
 
 </script>
+
 
 </body>
 </html>
