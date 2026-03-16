@@ -3,9 +3,9 @@
 
 <head>
 
-<title>Ecommerce Profit Calculator</title>
+<title>Ecommerce Margin Calculator</title>
 
-<meta name="description" content="Free ecommerce profit calculator to calculate real profit after product cost, ads, shipping and payment fees.">
+<meta name="description" content="Free ecommerce margin calculator to calculate product profit margins quickly.">
 
 <style>
 
@@ -25,7 +25,7 @@ border-radius:10px;
 box-shadow:0 10px 30px rgba(0,0,0,0.1);
 margin-top:60px;
 text-align:center;
-width:340px;
+width:320px;
 }
 
 input{
@@ -73,19 +73,13 @@ line-height:1.7;
 
 <div class="container">
 
-<h2>Ecommerce Profit Calculator</h2>
+<h2>Ecommerce Margin Calculator</h2>
 
 <input id="price" placeholder="Selling price">
 
 <input id="cost" placeholder="Product cost">
 
-<input id="shipping" placeholder="Shipping cost">
-
-<input id="ads" placeholder="Ad cost">
-
-<input id="fee" placeholder="Payment fee %">
-
-<button onclick="calc()">Calculate Profit</button>
+<button onclick="calc()">Calculate Margin</button>
 
 <div class="result" id="result"></div>
 
@@ -95,49 +89,50 @@ line-height:1.7;
 
 <div class="content">
 
-<h2>What is ecommerce profit?</h2>
+<h2>What is profit margin?</h2>
 
 <p>
-Ecommerce profit is the money you keep after subtracting all costs related to selling a product online.
-These costs usually include product cost, advertising, shipping and payment processing fees.
+Profit margin shows how much profit you make from each sale after subtracting the product cost. 
+It helps ecommerce store owners understand if a product is profitable or not.
 </p>
 
 
 <h2>Formula</h2>
 
 <p>
-Profit = Selling price − Product cost − Shipping cost − Advertising cost − Payment fee
+Margin % = (Selling price − Cost) ÷ Selling price × 100
 </p>
 
 
 <h2>Example</h2>
 
 <p>
-If a product sells for $50, costs $20, shipping costs $5 and advertising costs $10, the profit would be $15.
+If a product sells for $50 and costs $20, the profit is $30 and the margin is 60%.
 </p>
 
 
 <h2>FAQ</h2>
 
-<h3>How do you calculate ecommerce profit?</h3>
+<h3>What is a good ecommerce profit margin?</h3>
 
 <p>
-Ecommerce profit is calculated by subtracting all business costs from the selling price of the product.
-These costs include product cost, shipping, marketing and payment fees.
+A typical ecommerce profit margin ranges between 20% and 40%, depending on the product and advertising costs.
 </p>
 
 
-<h3>Why is profit calculation important?</h3>
+<h3>How do you calculate profit margin?</h3>
 
 <p>
-Profit calculation helps store owners understand whether a product is profitable or not before scaling advertising campaigns.
+Profit margin is calculated using the formula:
+(Selling price − Cost) ÷ Selling price × 100.
 </p>
 
 
-<h3>What is a good ecommerce profit?</h3>
+<h3>Why is profit margin important?</h3>
 
 <p>
-Many ecommerce businesses aim for a profit of at least 20–30% after all costs are included.
+Profit margin helps ecommerce store owners determine whether a product is profitable after costs such as 
+product price, shipping and advertising.
 </p>
 
 </div>
@@ -148,17 +143,12 @@ Many ecommerce businesses aim for a profit of at least 20–30% after all costs 
 
 function calc(){
 
-var price=parseFloat(document.getElementById("price").value)||0;
-var cost=parseFloat(document.getElementById("cost").value)||0;
-var shipping=parseFloat(document.getElementById("shipping").value)||0;
-var ads=parseFloat(document.getElementById("ads").value)||0;
-var fee=parseFloat(document.getElementById("fee").value)||0;
+var price=parseFloat(document.getElementById("price").value);
+var cost=parseFloat(document.getElementById("cost").value);
 
-var payment=price*(fee/100);
+var margin=((price-cost)/price)*100;
 
-var profit=price-cost-shipping-ads-payment;
-
-document.getElementById("result").innerHTML="Profit per sale: $"+profit.toFixed(2);
+document.getElementById("result").innerHTML="Margin: "+margin.toFixed(2)+"%";
 
 }
 
