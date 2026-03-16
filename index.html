@@ -1,165 +1,169 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 
-<title>Free Ecommerce Calculators</title>
+<title>Ecommerce Profit Calculator</title>
 
-<meta name="description" content="Free ecommerce calculators to calculate profit, ROAS, margins and break-even points for online stores.">
+<meta name="description" content="Free ecommerce profit calculator to calculate real profit after product cost, ads, shipping and payment fees.">
 
 <style>
 
 body{
 font-family:Arial;
 background:#f4f6fb;
-margin:0;
-text-align:center;
-}
-
-/* NAVBAR */
-
-nav{
-background:white;
-padding:15px 30px;
-box-shadow:0 2px 10px rgba(0,0,0,0.05);
 display:flex;
-justify-content:space-between;
+flex-direction:column;
 align-items:center;
+margin:0;
 }
 
-nav .logo{
-font-weight:bold;
-font-size:18px;
-}
-
-nav a{
-margin-left:20px;
-text-decoration:none;
-color:#333;
-font-weight:bold;
-}
-
-/* HEADER */
-
-header{
-padding:50px 20px 20px 20px;
-}
-
-h1{
-font-size:36px;
-margin-bottom:10px;
-}
-
-p{
-color:#555;
-}
-
-/* TOOLS GRID */
-
-.tools{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:20px;
-padding:40px;
-max-width:900px;
-margin:auto;
-}
-
-.card{
+.container{
 background:white;
-padding:30px;
+padding:40px;
 border-radius:10px;
-box-shadow:0 10px 25px rgba(0,0,0,0.08);
-transition:0.2s;
+box-shadow:0 10px 30px rgba(0,0,0,0.1);
+margin-top:60px;
+text-align:center;
+width:340px;
 }
 
-.card:hover{
-transform:translateY(-5px);
+input{
+padding:12px;
+margin:8px 0;
+width:100%;
+border:1px solid #ddd;
+border-radius:6px;
 }
 
-.card a{
-text-decoration:none;
-font-size:18px;
-color:#333;
+button{
+padding:12px;
+width:100%;
+background:#3b73e0;
+color:white;
+border:none;
+border-radius:6px;
+font-size:16px;
+cursor:pointer;
+}
+
+button:hover{
+background:#2c5ec4;
+}
+
+.result{
+margin-top:15px;
+font-size:20px;
 font-weight:bold;
+}
+
+.content{
+max-width:800px;
+margin:60px auto;
+padding:20px;
+line-height:1.7;
 }
 
 </style>
 
 </head>
 
+
 <body>
 
-<nav>
-<div class="logo">Ecommerce Tools</div>
+<div class="container">
 
-<div>
-<a href="index.html">Home</a>
-<a href="#tools">Tools</a>
-<a href="about.html">About</a>
-</div>
-</nav>
+<h2>Ecommerce Profit Calculator</h2>
 
-<header>
+<input id="price" placeholder="Selling price">
 
-<h1>Free Ecommerce Calculators</h1>
+<input id="cost" placeholder="Product cost">
 
-<p>Tools to calculate ecommerce profit, ROAS, margins and advertising budgets.</p>
+<input id="shipping" placeholder="Shipping cost">
 
-</header>
+<input id="ads" placeholder="Ad cost">
 
-<div id="tools" class="tools">
+<input id="fee" placeholder="Payment fee %">
 
-<div class="card">
-<a href="profit-calculator.html">Profit Calculator</a>
-</div>
+<button onclick="calc()">Calculate Profit</button>
 
-<div class="card">
-<a href="roas-calculator.html">ROAS Calculator</a>
-</div>
-
-<div class="card">
-<a href="margin-calculator.html">Margin Calculator</a>
-</div>
-
-<div class="card">
-<a href="break-even-calculator.html">Break-even Calculator</a>
-</div>
-
-<div class="card">
-<a href="ad-budget-calculator.html">Ad Budget Calculator</a>
-</div>
+<div class="result" id="result"></div>
 
 </div>
-<section style="max-width:800px;margin:60px auto;font-family:Arial;text-align:left;line-height:1.6">
 
-<h2>Free Ecommerce Calculators</h2>
+
+
+<div class="content">
+
+<h2>What is ecommerce profit?</h2>
 
 <p>
-This website provides simple and powerful ecommerce calculators to help store owners analyze their business numbers. 
-You can quickly calculate profit, margins, ROAS and advertising budgets.
+Ecommerce profit is the money you keep after subtracting all costs related to selling a product online.
+These costs usually include product cost, advertising, shipping and payment processing fees.
 </p>
 
-<h3>Why ecommerce calculators are important?</h3>
+
+<h2>Formula</h2>
 
 <p>
-Running an online store requires constant financial decisions. Tools like a profit calculator or margin calculator help 
-you understand how much money you actually make after product costs, advertising expenses and payment fees.
+Profit = Selling price − Product cost − Shipping cost − Advertising cost − Payment fee
 </p>
 
-<h3>Available tools</h3>
 
-<ul>
-<li>Profit Calculator</li>
-<li>ROAS Calculator</li>
-<li>Margin Calculator</li>
-<li>Break-even Calculator</li>
-<li>Ad Budget Calculator</li>
-</ul>
+<h2>Example</h2>
 
 <p>
-These tools are designed for ecommerce entrepreneurs, dropshippers and online store owners who want quick and accurate calculations.
+If a product sells for $50, costs $20, shipping costs $5 and advertising costs $10, the profit would be $15.
 </p>
 
-</section>
+
+<h2>FAQ</h2>
+
+<h3>How do you calculate ecommerce profit?</h3>
+
+<p>
+Ecommerce profit is calculated by subtracting all business costs from the selling price of the product.
+These costs include product cost, shipping, marketing and payment fees.
+</p>
+
+
+<h3>Why is profit calculation important?</h3>
+
+<p>
+Profit calculation helps store owners understand whether a product is profitable or not before scaling advertising campaigns.
+</p>
+
+
+<h3>What is a good ecommerce profit?</h3>
+
+<p>
+Many ecommerce businesses aim for a profit of at least 20–30% after all costs are included.
+</p>
+
+</div>
+
+
+
+<script>
+
+function calc(){
+
+var price=parseFloat(document.getElementById("price").value)||0;
+var cost=parseFloat(document.getElementById("cost").value)||0;
+var shipping=parseFloat(document.getElementById("shipping").value)||0;
+var ads=parseFloat(document.getElementById("ads").value)||0;
+var fee=parseFloat(document.getElementById("fee").value)||0;
+
+var payment=price*(fee/100);
+
+var profit=price-cost-shipping-ads-payment;
+
+document.getElementById("result").innerHTML="Profit per sale: $"+profit.toFixed(2);
+
+}
+
+</script>
+
+
 </body>
 </html>
