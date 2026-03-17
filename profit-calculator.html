@@ -9,36 +9,50 @@
 <style>
 
 body{
-font-family:Arial;
-background:#f4f6fb;
+font-family: 'Segoe UI', Tahoma, sans-serif;
+background: linear-gradient(135deg,#eef2ff,#f8fafc);
 margin:0;
 }
 
 /* NAVBAR */
 nav{
 background:white;
-padding:15px 30px;
-box-shadow:0 2px 10px rgba(0,0,0,0.05);
+padding:15px 40px;
 display:flex;
 justify-content:space-between;
+box-shadow:0 4px 20px rgba(0,0,0,0.05);
 }
 
 nav a{
-margin-left:15px;
+margin-left:20px;
 text-decoration:none;
 color:#333;
-font-weight:bold;
+font-weight:600;
 }
 
-/* CONTAINER */
+/* HERO */
+.hero{
+text-align:center;
+margin-top:40px;
+}
+
+.hero h1{
+font-size:32px;
+margin-bottom:10px;
+}
+
+.hero p{
+color:#666;
+}
+
+/* CALCULATOR CARD */
 .container{
 background:white;
-padding:40px;
-border-radius:10px;
-box-shadow:0 10px 30px rgba(0,0,0,0.1);
-margin:60px auto;
-text-align:center;
-width:320px;
+padding:35px;
+border-radius:15px;
+box-shadow:0 20px 40px rgba(0,0,0,0.08);
+margin:30px auto;
+width:350px;
 }
 
 input{
@@ -46,37 +60,57 @@ padding:12px;
 margin:8px 0;
 width:100%;
 border:1px solid #ddd;
-border-radius:6px;
+border-radius:8px;
+font-size:14px;
 }
 
+input:focus{
+outline:none;
+border-color:#3b73e0;
+}
+
+/* BUTTON */
 button{
-padding:12px;
+padding:14px;
 width:100%;
-background:#3b73e0;
+background:linear-gradient(135deg,#4f7cff,#3b73e0);
 color:white;
 border:none;
-border-radius:6px;
+border-radius:8px;
 cursor:pointer;
+font-weight:bold;
+transition:0.3s;
 }
 
+button:hover{
+transform:scale(1.02);
+}
+
+/* RESULT */
 .result{
 margin-top:15px;
 font-size:20px;
 font-weight:bold;
+color:#111;
+text-align:center;
 }
 
 /* CONTENT */
 .content{
-max-width:800px;
-margin:40px auto;
+max-width:850px;
+margin:60px auto;
 padding:20px;
-line-height:1.7;
+line-height:1.8;
+}
+
+.content h2{
+margin-top:30px;
 }
 
 /* RELATED */
 .related{
 text-align:center;
-margin:40px 0;
+margin:50px 0;
 }
 
 .related a{
@@ -87,6 +121,7 @@ background:#eef2ff;
 border-radius:20px;
 text-decoration:none;
 color:#333;
+font-weight:500;
 }
 
 .related a:hover{
@@ -110,9 +145,12 @@ color:white;
 </div>
 </nav>
 
-<div class="container">
+<div class="hero">
+<h1>Ecommerce Profit Calculator</h1>
+<p>Calculate your real profit after all expenses</p>
+</div>
 
-<h2>Ecommerce Profit Calculator</h2>
+<div class="container">
 
 <input id="price" placeholder="Selling price">
 <input id="cost" placeholder="Product cost">
@@ -130,7 +168,7 @@ color:white;
 
 <h2>What is ecommerce profit?</h2>
 <p>
-Ecommerce profit is the amount of money you keep after subtracting all costs such as product cost, shipping and ads.
+Ecommerce profit is the money you keep after subtracting all costs related to selling a product online. These include product cost, ads, shipping, and payment fees.
 </p>
 
 <h2>Formula</h2>
@@ -140,16 +178,25 @@ Profit = Selling price − Cost − Shipping − Ads − Fees
 
 <h2>Example</h2>
 <p>
-If you sell at $50 and your total costs are $35, your profit is $15.
+If you sell a product for $50 and your total costs are $35, your profit is $15.
 </p>
 
 <h2>FAQ</h2>
 
-<h3>Is profit important?</h3>
-<p>Yes, it tells you if your product is actually making money.</p>
+<h3>How do you calculate ecommerce profit?</h3>
+<p>
+Subtract all costs from the selling price including ads and fees.
+</p>
 
-<h3>What is a good profit?</h3>
-<p>Most ecommerce stores aim for 20% to 40% profit.</p>
+<h3>Why is profit important?</h3>
+<p>
+It tells you if your business is actually making money.
+</p>
+
+<h3>What is a good profit margin?</h3>
+<p>
+Most ecommerce businesses aim for 20% to 40%.
+</p>
 
 </div>
 
