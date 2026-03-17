@@ -4,7 +4,6 @@
 <head>
 
 <title>Ecommerce Profit Calculator</title>
-<meta name="description" content="Free ecommerce profit calculator to calculate real profit after ads, shipping and fees.">
 
 <style>
 
@@ -125,19 +124,19 @@ color:white;
 <div class="container">
 
 <label>Selling price</label>
-<input id="price" value="50" onblur="fixEmpty(this,50)">
+<input id="price" placeholder="e.g. 50">
 
 <label>Product cost</label>
-<input id="cost" value="20" onblur="fixEmpty(this,20)">
+<input id="cost" placeholder="e.g. 20">
 
 <label>Shipping cost</label>
-<input id="shipping" value="5" onblur="fixEmpty(this,5)">
+<input id="shipping" placeholder="e.g. 5">
 
 <label>Ad cost</label>
-<input id="ads" value="10" onblur="fixEmpty(this,10)">
+<input id="ads" placeholder="e.g. 10">
 
 <label>Payment fee (%)</label>
-<input id="fee" value="3" onblur="fixEmpty(this,3)">
+<input id="fee" placeholder="e.g. 3">
 
 <button onclick="calc()">Calculate Profit</button>
 
@@ -151,7 +150,6 @@ color:white;
 <h2>What is ecommerce profit?</h2>
 <p>
 Ecommerce profit is the money you keep after subtracting all costs related to selling a product online.
-These include product cost, advertising, shipping, and payment fees.
 </p>
 
 <h3>Formula</h3>
@@ -167,19 +165,18 @@ If you sell a product for $50 and your total costs are $35, your profit is $15.
 <h3>FAQ</h3>
 
 <p><b>How do you calculate ecommerce profit?</b><br>
-Subtract all costs from the selling price including ads and fees.</p>
+Subtract all costs from selling price.</p>
 
 <p><b>Why is profit important?</b><br>
-It helps you know if your business is actually making money.</p>
+It tells you if your business is profitable.</p>
 
 <p><b>What is a good profit margin?</b><br>
-Most ecommerce businesses aim for 20% to 40% profit.</p>
+20%–40% is common.</p>
 
 </div>
 
 </div>
 
-<!-- RELATED -->
 <div class="related">
 
 <h3>Related tools</h3>
@@ -191,12 +188,6 @@ Most ecommerce businesses aim for 20% to 40% profit.</p>
 </div>
 
 <script>
-
-function fixEmpty(el, defaultVal){
-if(el.value === ""){
-el.value = defaultVal;
-}
-}
 
 function calc(){
 
