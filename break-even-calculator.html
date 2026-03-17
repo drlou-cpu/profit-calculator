@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Break-even Calculator</title>
+
+<meta name="description" content="Free break-even calculator to calculate how many sales are needed to cover costs.">
+
+<style>
+
+body{
+font-family:Arial;
+background:#f4f6fb;
+display:flex;
+flex-direction:column;
+align-items:center;
+margin:0;
+}
+
+.container{
+background:white;
+padding:40px;
+border-radius:10px;
+box-shadow:0 10px 30px rgba(0,0,0,0.1);
+margin-top:60px;
+text-align:center;
+width:320px;
+}
+
+input{
+padding:12px;
+margin:8px 0;
+width:100%;
+border:1px solid #ddd;
+border-radius:6px;
+}
+
+button{
+padding:12px;
+width:100%;
+background:#3b73e0;
+color:white;
+border:none;
+border-radius:6px;
+font-size:16px;
+cursor:pointer;
+}
+
+.result{
+margin-top:15px;
+font-size:20px;
+font-weight:bold;
+}
+
+.content{
+max-width:800px;
+margin:60px auto;
+padding:20px;
+line-height:1.7;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>Break-even Calculator</h2>
+
+<input id="fixed" placeholder="Fixed costs">
+
+<input id="price" placeholder="Selling price">
+
+<input id="cost" placeholder="Product cost">
+
+<button onclick="calc()">Calculate Break-even</button>
+
+<div class="result" id="result"></div>
+
+</div>
+
+
+<div class="content">
+
+<h2>What is break-even?</h2>
+
+<p>
+Break-even is the point where your total revenue equals your total costs.
+It tells you how many products you must sell to cover your expenses.
+</p>
+
+<h2>Formula</h2>
+
+<p>
+Break-even sales = Fixed costs ÷ (Selling price − Product cost)
+</p>
+
+</div>
+
+
+<script>
+
+function calc(){
+
+var fixed=parseFloat(document.getElementById("fixed").value)||0;
+var price=parseFloat(document.getElementById("price").value)||0;
+var cost=parseFloat(document.getElementById("cost").value)||0;
+
+var result=fixed/(price-cost);
+
+document.getElementById("result").innerHTML="Sales needed: "+Math.ceil(result);
+
+}
+
+</script>
+
+</body>
+</html>
