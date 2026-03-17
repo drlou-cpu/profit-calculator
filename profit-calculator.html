@@ -4,28 +4,41 @@
 <head>
 
 <title>Ecommerce Profit Calculator</title>
-
-<meta name="description" content="Free ecommerce profit calculator to calculate real profit after product cost, ads, shipping and payment fees.">
+<meta name="description" content="Free ecommerce profit calculator to calculate real profit after ads, shipping and fees.">
 
 <style>
 
 body{
 font-family:Arial;
 background:#f4f6fb;
-display:flex;
-flex-direction:column;
-align-items:center;
 margin:0;
 }
 
+/* NAVBAR */
+nav{
+background:white;
+padding:15px 30px;
+box-shadow:0 2px 10px rgba(0,0,0,0.05);
+display:flex;
+justify-content:space-between;
+}
+
+nav a{
+margin-left:15px;
+text-decoration:none;
+color:#333;
+font-weight:bold;
+}
+
+/* CONTAINER */
 .container{
 background:white;
 padding:40px;
 border-radius:10px;
 box-shadow:0 10px 30px rgba(0,0,0,0.1);
-margin-top:60px;
+margin:60px auto;
 text-align:center;
-width:340px;
+width:320px;
 }
 
 input{
@@ -43,12 +56,7 @@ background:#3b73e0;
 color:white;
 border:none;
 border-radius:6px;
-font-size:16px;
 cursor:pointer;
-}
-
-button:hover{
-background:#2c5ec4;
 }
 
 .result{
@@ -57,32 +65,59 @@ font-size:20px;
 font-weight:bold;
 }
 
+/* CONTENT */
 .content{
 max-width:800px;
-margin:60px auto;
+margin:40px auto;
 padding:20px;
 line-height:1.7;
+}
+
+/* RELATED */
+.related{
+text-align:center;
+margin:40px 0;
+}
+
+.related a{
+display:inline-block;
+margin:6px;
+padding:10px 18px;
+background:#eef2ff;
+border-radius:20px;
+text-decoration:none;
+color:#333;
+}
+
+.related a:hover{
+background:#3b73e0;
+color:white;
 }
 
 </style>
 
 </head>
 
-
 <body>
+
+<nav>
+<div><b>Ecommerce Tools</b></div>
+<div>
+<a href="index.html">Home</a>
+<a href="profit-calculator.html">Profit</a>
+<a href="margin-calculator.html">Margin</a>
+<a href="roas-calculator.html">ROAS</a>
+</div>
+</nav>
 
 <div class="container">
 
 <h2>Ecommerce Profit Calculator</h2>
 
 <input id="price" placeholder="Selling price">
-
 <input id="cost" placeholder="Product cost">
-
 <input id="shipping" placeholder="Shipping cost">
-
 <input id="ads" placeholder="Ad cost">
-
 <input id="fee" placeholder="Payment fee %">
 
 <button onclick="calc()">Calculate Profit</button>
@@ -91,58 +126,42 @@ line-height:1.7;
 
 </div>
 
-
-
 <div class="content">
 
 <h2>What is ecommerce profit?</h2>
-
 <p>
-Ecommerce profit is the money you keep after subtracting all costs related to selling a product online.
-These costs usually include product cost, advertising, shipping and payment processing fees.
+Ecommerce profit is the amount of money you keep after subtracting all costs such as product cost, shipping and ads.
 </p>
-
 
 <h2>Formula</h2>
-
 <p>
-Profit = Selling price − Product cost − Shipping cost − Advertising cost − Payment fee
+Profit = Selling price − Cost − Shipping − Ads − Fees
 </p>
-
 
 <h2>Example</h2>
-
 <p>
-If a product sells for $50, costs $20, shipping costs $5 and advertising costs $10, the profit would be $15.
+If you sell at $50 and your total costs are $35, your profit is $15.
 </p>
-
 
 <h2>FAQ</h2>
 
-<h3>How do you calculate ecommerce profit?</h3>
+<h3>Is profit important?</h3>
+<p>Yes, it tells you if your product is actually making money.</p>
 
-<p>
-Ecommerce profit is calculated by subtracting all business costs from the selling price of the product.
-These costs include product cost, shipping, marketing and payment fees.
-</p>
-
-
-<h3>Why is profit calculation important?</h3>
-
-<p>
-Profit calculation helps store owners understand whether a product is profitable or not before scaling advertising campaigns.
-</p>
-
-
-<h3>What is a good ecommerce profit?</h3>
-
-<p>
-Many ecommerce businesses aim for a profit of at least 20–30% after all costs are included.
-</p>
+<h3>What is a good profit?</h3>
+<p>Most ecommerce stores aim for 20% to 40% profit.</p>
 
 </div>
 
+<div class="related">
 
+<h3>Related tools</h3>
+
+<a href="margin-calculator.html">Margin Calculator</a>
+<a href="roas-calculator.html">ROAS Calculator</a>
+<a href="markup-calculator.html">Markup Calculator</a>
+
+</div>
 
 <script>
 
@@ -158,19 +177,11 @@ var payment=price*(fee/100);
 
 var profit=price-cost-shipping-ads-payment;
 
-document.getElementById("result").innerHTML="Profit per sale: $"+profit.toFixed(2);
+document.getElementById("result").innerHTML="Profit: $"+profit.toFixed(2);
 
 }
 
 </script>
-
-<h3>Related tools</h3>
-
-<ul>
-<li><a href="margin-calculator.html">Margin Calculator</a></li>
-<li><a href="roas-calculator.html">ROAS Calculator</a></li>
-<li><a href="markup-calculator.html">Markup Calculator</a></li>
-</ul>
 
 </body>
 </html>
