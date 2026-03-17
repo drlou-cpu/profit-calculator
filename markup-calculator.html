@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Ecommerce Markup Calculator</title>
+
+<meta name="description" content="Free ecommerce markup calculator to calculate product markup percentage.">
+
+<style>
+
+body{
+font-family:Arial;
+background:#f4f6fb;
+display:flex;
+flex-direction:column;
+align-items:center;
+margin:0;
+}
+
+.container{
+background:white;
+padding:40px;
+border-radius:10px;
+box-shadow:0 10px 30px rgba(0,0,0,0.1);
+margin-top:60px;
+text-align:center;
+width:320px;
+}
+
+input{
+padding:12px;
+margin:8px 0;
+width:100%;
+border:1px solid #ddd;
+border-radius:6px;
+}
+
+button{
+padding:12px;
+width:100%;
+background:#3b73e0;
+color:white;
+border:none;
+border-radius:6px;
+font-size:16px;
+cursor:pointer;
+}
+
+button:hover{
+background:#2c5ec4;
+}
+
+.result{
+margin-top:15px;
+font-size:20px;
+font-weight:bold;
+}
+
+.content{
+max-width:800px;
+margin:60px auto;
+padding:20px;
+line-height:1.7;
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+<div class="container">
+
+<h2>Ecommerce Markup Calculator</h2>
+
+<input id="price" placeholder="Selling price">
+
+<input id="cost" placeholder="Product cost">
+
+<button onclick="calc()">Calculate Markup</button>
+
+<div class="result" id="result"></div>
+
+</div>
+
+
+
+<div class="content">
+
+<h2>What is markup?</h2>
+
+<p>
+Markup is the percentage increase from the product cost to the selling price.
+It shows how much you increase the price compared to the cost.
+</p>
+
+
+<h2>Formula</h2>
+
+<p>
+Markup % = (Selling price − Cost) ÷ Cost × 100
+</p>
+
+
+<h2>Example</h2>
+
+<p>
+If a product costs $20 and you sell it for $50, the markup is 150%.
+</p>
+
+
+<h2>FAQ</h2>
+
+<h3>What is the difference between markup and margin?</h3>
+
+<p>
+Markup is based on cost, while margin is based on selling price. They are not the same.
+</p>
+
+
+<h3>What is a good markup?</h3>
+
+<p>
+A common markup in ecommerce ranges between 50% and 200% depending on the product and competition.
+</p>
+
+</div>
+
+
+
+<script>
+
+function calc(){
+
+var price=parseFloat(document.getElementById("price").value)||0;
+var cost=parseFloat(document.getElementById("cost").value)||0;
+
+var markup=((price-cost)/cost)*100;
+
+document.getElementById("result").innerHTML="Markup: "+markup.toFixed(2)+"%";
+
+}
+
+</script>
+
+
+</body>
+</html>
