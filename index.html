@@ -2,47 +2,77 @@
 <html>
 
 <head>
+
 <title>Ecommerce Tools</title>
 
 <style>
 
 body{
 font-family:Arial;
-background:#f4f6fb;
+background:linear-gradient(135deg,#eef2ff,#f8fafc);
 margin:0;
 }
 
+/* NAVBAR */
 .nav{
 display:flex;
 justify-content:space-between;
+align-items:center;
 padding:15px 30px;
 background:white;
+box-shadow:0 4px 15px rgba(0,0,0,0.05);
 }
 
 .logo{
 color:#16a34a;
 font-weight:bold;
+font-size:18px;
 }
 
+/* HERO */
 .hero{
 text-align:center;
-padding:40px;
+padding:60px 20px 40px;
 }
 
+.hero h1{
+font-size:34px;
+color:#16a34a;
+}
+
+.hero p{
+color:#666;
+margin-top:10px;
+}
+
+/* GRID */
 .tools{
 display:grid;
-grid-template-columns:repeat(2,1fr);
+grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
 gap:15px;
 padding:20px;
+max-width:900px;
+margin:auto;
 }
 
+/* CARD */
 .card{
 background:white;
 padding:20px;
-border-radius:10px;
+border-radius:12px;
 text-align:center;
 text-decoration:none;
 color:#333;
+box-shadow:0 10px 25px rgba(0,0,0,0.08);
+transition:0.3s;
+font-weight:bold;
+}
+
+.card:hover{
+background:#22c55e;
+color:white;
+transform:translateY(-5px);
+box-shadow:0 20px 40px rgba(0,0,0,0.15);
 }
 
 </style>
@@ -57,17 +87,17 @@ color:#333;
 
 <div class="hero">
 <h1>Free Ecommerce Calculators</h1>
-<p>Tools to calculate profit, margins, ROAS</p>
+<p>Tools to calculate profit, margins, ROAS and more</p>
 </div>
 
 <div class="tools">
 
-<a href="profit-calculator.html" class="card">Profit Calculator</a>
-<a href="roas-calculator.html" class="card">ROAS Calculator</a>
-<a href="margin-calculator.html" class="card">Margin Calculator</a>
-<a href="break-even-calculator.html" class="card">Break-even Calculator</a>
-<a href="ad-budget-calculator.html" class="card">Ad Budget Calculator</a>
-<a href="markup-calculator.html" class="card">Markup Calculator</a>
+<a href="profit-calculator.html" class="card">💰 Profit Calculator</a>
+<a href="roas-calculator.html" class="card">📈 ROAS Calculator</a>
+<a href="margin-calculator.html" class="card">📊 Margin Calculator</a>
+<a href="break-even-calculator.html" class="card">⚖️ Break-even</a>
+<a href="ad-budget-calculator.html" class="card">📢 Ad Budget</a>
+<a href="markup-calculator.html" class="card">🏷️ Markup</a>
 
 </div>
 
