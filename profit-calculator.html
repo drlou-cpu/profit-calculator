@@ -13,11 +13,44 @@ background:#f4f6fb;
 margin:0;
 }
 
-/* HEADER */
-h1{
-text-align:center;
+/* NAVBAR */
+.nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 30px;
+background:white;
+box-shadow:0 2px 10px rgba(0,0,0,0.05);
+}
+
+.nav a{
+text-decoration:none;
+margin-left:20px;
+color:#333;
+font-weight:bold;
+}
+
+.logo{
 color:#16a34a;
-margin-top:40px;
+font-weight:bold;
+font-size:18px;
+}
+
+/* HERO */
+.hero{
+text-align:center;
+padding:40px 20px;
+}
+
+.hero h1{
+font-size:36px;
+color:#16a34a;
+margin-bottom:10px;
+}
+
+.hero p{
+color:#555;
+font-size:18px;
 }
 
 /* LAYOUT */
@@ -26,7 +59,7 @@ display:flex;
 justify-content:center;
 gap:40px;
 flex-wrap:wrap;
-margin-top:30px;
+margin-top:20px;
 }
 
 /* CARD */
@@ -92,22 +125,33 @@ box-shadow:0 10px 30px rgba(0,0,0,0.1);
 /* RELATED */
 .related{
 text-align:center;
-margin:40px 0;
+margin:50px 0;
 }
 
-.related a{
-display:inline-block;
-margin:6px;
-padding:10px 15px;
-background:#eef2ff;
-border-radius:20px;
+.tools-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+gap:15px;
+max-width:600px;
+margin:auto;
+}
+
+.card{
+display:block;
+padding:15px;
+background:white;
+border-radius:10px;
+text-align:center;
 text-decoration:none;
 color:#333;
+box-shadow:0 5px 15px rgba(0,0,0,0.1);
+transition:0.2s;
 }
 
-.related a:hover{
+.card:hover{
 background:#22c55e;
 color:white;
+transform:translateY(-3px);
 }
 
 </style>
@@ -116,11 +160,25 @@ color:white;
 
 <body>
 
-<h1>Ecommerce Profit Calculator</h1>
+<!-- NAVBAR -->
+<div class="nav">
+<div class="logo">Ecommerce Tools</div>
+<div>
+<a href="#">Home</a>
+<a href="#">Tools</a>
+<a href="#">About</a>
+</div>
+</div>
 
+<!-- HERO -->
+<div class="hero">
+<h1>Ecommerce Profit Calculator</h1>
+<p>Calculate your real profit after all expenses</p>
+</div>
+
+<!-- MAIN -->
 <div class="wrapper">
 
-<!-- CALCULATOR -->
 <div class="container">
 
 <label>Selling price</label>
@@ -144,7 +202,6 @@ color:white;
 
 </div>
 
-<!-- CONTENT -->
 <div class="content">
 
 <h2>What is ecommerce profit?</h2>
@@ -177,13 +234,18 @@ It tells you if your business is profitable.</p>
 
 </div>
 
+<!-- RELATED TOOLS -->
 <div class="related">
 
 <h3>Related tools</h3>
 
-<a href="margin-calculator.html">Margin Calculator</a>
-<a href="roas-calculator.html">ROAS Calculator</a>
-<a href="markup-calculator.html">Markup Calculator</a>
+<div class="tools-grid">
+
+<a href="margin-calculator.html" class="card">Margin Calculator</a>
+<a href="roas-calculator.html" class="card">ROAS Calculator</a>
+<a href="markup-calculator.html" class="card">Markup Calculator</a>
+
+</div>
 
 </div>
 
