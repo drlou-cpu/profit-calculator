@@ -32,11 +32,11 @@ font-size:18px;
 /* HERO */
 .hero{
 text-align:center;
-padding:60px 20px 40px;
+padding:60px 20px 30px;
 }
 
 .hero h1{
-font-size:34px;
+font-size:36px;
 color:#16a34a;
 }
 
@@ -48,31 +48,45 @@ margin-top:10px;
 /* GRID */
 .tools{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
-gap:15px;
+grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+gap:20px;
 padding:20px;
-max-width:900px;
+max-width:1000px;
 margin:auto;
 }
 
 /* CARD */
 .card{
 background:white;
-padding:20px;
-border-radius:12px;
+padding:25px 15px;
+border-radius:14px;
 text-align:center;
 text-decoration:none;
 color:#333;
-box-shadow:0 10px 25px rgba(0,0,0,0.08);
+box-shadow:0 12px 30px rgba(0,0,0,0.08);
 transition:0.3s;
 font-weight:bold;
+font-size:15px;
 }
 
 .card:hover{
 background:#22c55e;
 color:white;
-transform:translateY(-5px);
-box-shadow:0 20px 40px rgba(0,0,0,0.15);
+transform:translateY(-6px);
+box-shadow:0 25px 50px rgba(0,0,0,0.15);
+}
+
+/* CONTENT */
+.content{
+max-width:800px;
+margin:60px auto;
+padding:20px;
+color:#444;
+line-height:1.8;
+}
+
+.content h2{
+margin-top:30px;
 }
 
 </style>
@@ -87,7 +101,7 @@ box-shadow:0 20px 40px rgba(0,0,0,0.15);
 
 <div class="hero">
 <h1>Free Ecommerce Calculators</h1>
-<p>Tools to calculate profit, margins, ROAS and more</p>
+<p>Tools to calculate profit, margins, ROAS and advertising budgets</p>
 </div>
 
 <div class="tools">
@@ -95,9 +109,34 @@ box-shadow:0 20px 40px rgba(0,0,0,0.15);
 <a href="profit-calculator.html" class="card">💰 Profit Calculator</a>
 <a href="roas-calculator.html" class="card">📈 ROAS Calculator</a>
 <a href="margin-calculator.html" class="card">📊 Margin Calculator</a>
-<a href="break-even-calculator.html" class="card">⚖️ Break-even</a>
-<a href="ad-budget-calculator.html" class="card">📢 Ad Budget</a>
-<a href="markup-calculator.html" class="card">🏷️ Markup</a>
+<a href="break-even-calculator.html" class="card">⚖️ Break-even Calculator</a>
+<a href="ad-budget-calculator.html" class="card">📢 Ad Budget Calculator</a>
+<a href="markup-calculator.html" class="card">🏷️ Markup Calculator</a>
+
+</div>
+
+<!-- SEO CONTENT -->
+<div class="content">
+
+<h2>Free Ecommerce Calculators</h2>
+<p>
+This website provides simple ecommerce calculators to help store owners calculate profit, margins, ROAS and advertising budgets quickly and easily.
+</p>
+
+<h2>Why ecommerce calculators are important?</h2>
+<p>
+Running an online store requires understanding your numbers. Tools like profit calculators and margin calculators help you estimate profits and advertising performance.
+</p>
+
+<h2>Available tools</h2>
+<ul>
+<li>Profit Calculator</li>
+<li>ROAS Calculator</li>
+<li>Margin Calculator</li>
+<li>Break-even Calculator</li>
+<li>Ad Budget Calculator</li>
+<li>Markup Calculator</li>
+</ul>
 
 </div>
 
