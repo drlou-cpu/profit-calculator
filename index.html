@@ -1,3 +1,12 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Ecommerce Tools</title>
+
+<style>
+
 body{
 font-family:Arial;
 background:linear-gradient(135deg,#eef2ff,#f8fafc);
@@ -43,7 +52,6 @@ color:transparent;
 .hero p{
 color:#666;
 font-size:18px;
-margin-top:10px;
 }
 
 /* GRID */
@@ -66,8 +74,6 @@ text-decoration:none;
 color:#333;
 box-shadow:0 15px 40px rgba(0,0,0,0.08);
 transition:0.3s;
-position:relative;
-overflow:hidden;
 }
 
 .card:hover{
@@ -77,30 +83,56 @@ background:#22c55e;
 color:white;
 }
 
-/* ICON STYLE (وهمي يعطي إحساس UI) */
-.card::before{
-content:"";
-width:40px;
-height:40px;
-border-radius:50%;
-background:#eef2ff;
-display:block;
-margin:0 auto 15px;
-}
+</style>
 
-.card:hover::before{
-background:white;
-}
+</head>
 
-/* CONTENT SECTION */
-.content{
-max-width:800px;
-margin:50px auto;
-padding:20px;
-line-height:1.8;
-color:#444;
-}
+<body>
 
-.content h2{
-margin-top:30px;
-}
+<!-- NAVBAR -->
+<div class="nav">
+<div class="logo">Ecommerce Tools</div>
+<div>
+<a href="index.html">Home</a>
+<a href="#">Tools</a>
+<a href="#">About</a>
+</div>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+<h1>Free Ecommerce Calculators</h1>
+<p>Tools to calculate profit, margins, ROAS and advertising budgets.</p>
+</div>
+
+<!-- TOOLS -->
+<div class="tools">
+
+<a href="profit-calculator.html" class="card">
+<h3>Profit Calculator</h3>
+</a>
+
+<a href="roas-calculator.html" class="card">
+<h3>ROAS Calculator</h3>
+</a>
+
+<a href="margin-calculator.html" class="card">
+<h3>Margin Calculator</h3>
+</a>
+
+<a href="break-even-calculator.html" class="card">
+<h3>Break-even Calculator</h3>
+</a>
+
+<a href="ad-budget-calculator.html" class="card">
+<h3>Ad Budget Calculator</h3>
+</a>
+
+<a href="markup-calculator.html" class="card">
+<h3>Markup Calculator</h3>
+</a>
+
+</div>
+
+</body>
+</html>
