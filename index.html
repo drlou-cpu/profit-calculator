@@ -9,6 +9,7 @@
 
 <style>
 
+/* BASE */
 body{
 font-family:Arial;
 margin:0;
@@ -16,7 +17,7 @@ background:linear-gradient(135deg,#e0f2fe,#f0fdf4);
 overflow-x:hidden;
 }
 
-/* BACKGROUND */
+/* BACKGROUND SHAPES */
 body::before{
 content:"";
 position:absolute;
@@ -43,16 +44,22 @@ opacity:0.15;
 filter:blur(80px);
 }
 
+/* CONTAINER */
+.container{
+max-width:1000px;
+margin:auto;
+padding:0 20px;
+position:relative;
+z-index:2;
+}
+
 /* NAVBAR */
 .nav{
 display:flex;
 align-items:center;
-gap:10px;
 padding:15px 20px;
 background:white;
 box-shadow:0 4px 20px rgba(0,0,0,0.05);
-position:relative;
-z-index:2;
 }
 
 /* LOGO */
@@ -78,104 +85,110 @@ color:#2563eb;
 /* HERO */
 .hero{
 text-align:center;
-padding:60px 20px 30px;
-position:relative;
-z-index:2;
+padding:60px 20px 20px;
 }
 
 .hero h1{
-color:#16a34a;
 font-size:32px;
-margin-bottom:10px;
+font-weight:700;
+color:#16a34a;
+margin-bottom:8px;
 }
 
 .hero p{
-color:#666;
 font-size:15px;
+color:#555;
+opacity:0.85;
 }
 
 /* GRID */
 .tools{
 display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:20px;
-padding:20px;
-max-width:900px;
-margin:auto;
-position:relative;
-z-index:2;
+grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+gap:18px;
+margin-top:20px;
 }
 
-/* CARD (FIXED) */
+/* CARD */
 .card{
 background:white;
-padding:22px;
+padding:18px;
 border-radius:16px;
 text-align:center;
 text-decoration:none;
 color:#333;
-box-shadow:0 15px 40px rgba(0,0,0,0.08);
-transition:0.3s;
-font-weight:bold;
+box-shadow:0 12px 30px rgba(0,0,0,0.08);
+transition:0.25s;
+font-weight:600;
 display:flex;
 flex-direction:column;
 align-items:center;
 justify-content:center;
-min-height:100px; /* 🔥 أهم تعديل */
+min-height:110px;
 }
 
 /* ICON */
 .card span{
-font-size:24px;
-margin-bottom:8px;
+font-size:22px;
+margin-bottom:6px;
 }
 
 /* HOVER */
 .card:hover{
-transform:translateY(-6px);
-box-shadow:0 25px 60px rgba(0,0,0,0.15);
+transform:translateY(-5px);
+box-shadow:0 20px 50px rgba(0,0,0,0.15);
 background:#22c55e;
 color:white;
 }
 
+/* CONTENT */
+.content{
+text-align:center;
+margin:30px auto 40px;
+font-size:14px;
+color:#555;
+max-width:600px;
+}
+
 /* TABLET */
 @media(max-width:768px){
-.tools{
-grid-template-columns:repeat(2,1fr);
+
+.hero h1{
+font-size:26px;
 }
+
+.tools{
+gap:15px;
+}
+
 }
 
 /* MOBILE */
 @media(max-width:480px){
 
-.tools{
-grid-template-columns:repeat(2,1fr); /* 🔥 يبقى Grid */
-gap:12px;
-padding:15px;
-}
-
-.card{
-padding:18px;
-font-size:13px;
-min-height:90px;
+.hero{
+padding:40px 15px 10px;
 }
 
 .hero h1{
-font-size:24px;
+font-size:22px;
 }
 
+.hero p{
+font-size:13px;
 }
 
-/* CONTENT */
-.content{
-max-width:600px;
-margin:30px auto; /* 🔥 تقليل الفراغ */
-padding:20px;
-text-align:center;
-color:#555;
-font-size:14px;
-position:relative;
-z-index:2;
+.tools{
+grid-template-columns:repeat(2,1fr);
+gap:12px;
+}
+
+.card{
+min-height:90px;
+padding:14px;
+font-size:13px;
+}
+
 }
 
 </style>
@@ -184,18 +197,24 @@ z-index:2;
 
 <body>
 
+<!-- NAVBAR -->
 <div class="nav">
+<div class="container">
 <div class="logo">
 <div class="logo-circle"></div>
 <div class="logo-text">Calculator Hub</div>
 </div>
 </div>
+</div>
 
-<div class="hero">
+<!-- HERO -->
+<div class="container hero">
 <h1>Free Ecommerce Calculators</h1>
 <p>Smart tools to calculate profit, margins and ROAS</p>
 </div>
 
+<!-- TOOLS -->
+<div class="container">
 <div class="tools">
 
 <a href="profit-calculator.html" class="card">
@@ -229,11 +248,15 @@ Markup Calculator
 </a>
 
 </div>
+</div>
 
+<!-- CONTENT -->
+<div class="container">
 <div class="content">
 <p>
 Simple ecommerce calculators to help you make better business decisions.
 </p>
+</div>
 </div>
 
 </body>
