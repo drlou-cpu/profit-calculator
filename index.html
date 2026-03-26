@@ -11,7 +11,6 @@ body{
 font-family:Arial;
 background:linear-gradient(135deg,#e0f2fe,#f0fdf4);
 margin:0;
-scroll-behavior:smooth;
 }
 
 /* NAVBAR */
@@ -22,131 +21,62 @@ align-items:center;
 padding:18px 30px;
 background:white;
 box-shadow:0 6px 25px rgba(0,0,0,0.05);
-position:sticky;
-top:0;
-z-index:1000;
 }
 
+/* LOGO */
 .logo{
-color:#16a34a;
+display:flex;
+align-items:center;
+gap:10px;
 font-weight:bold;
-font-size:20px;
-}
-
-/* LINKS */
-.nav a{
-margin-left:20px;
-text-decoration:none;
-color:#333;
-font-weight:bold;
-}
-
-.nav a:hover{
-color:#16a34a;
+font-size:18px;
 }
 
 /* HERO */
 .hero{
 text-align:center;
-padding:70px 20px 40px;
+padding:60px 20px 40px;
 }
 
 .hero h1{
-font-size:40px;
-background:linear-gradient(90deg,#16a34a,#22c55e);
--webkit-background-clip:text;
-color:transparent;
-}
-
-.hero p{
-color:#555;
-margin-top:15px;
-font-size:18px;
+font-size:36px;
+color:#16a34a;
 }
 
 /* GRID */
 .tools{
 display:grid;
 grid-template-columns:repeat(3,1fr);
-gap:25px;
+gap:20px;
 padding:20px;
-max-width:950px;
+max-width:900px;
 margin:auto;
 }
 
 /* CARD */
 .card{
 background:white;
-padding:30px 20px;
-border-radius:16px;
+padding:25px;
+border-radius:14px;
 text-align:center;
 text-decoration:none;
 color:#333;
-
-box-shadow:0 20px 50px rgba(0,0,0,0.08);
-transition:all 0.3s ease;
-
-min-height:100px;
-display:flex;
-align-items:center;
-justify-content:center;
-
-position:relative;
-overflow:hidden;
-}
-
-.card::before{
-content:"";
-position:absolute;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:linear-gradient(135deg,#22c55e,#4ade80);
-opacity:0;
+box-shadow:0 15px 40px rgba(0,0,0,0.08);
+font-weight:bold;
 transition:0.3s;
 }
 
-.card span{
-position:relative;
-z-index:2;
-}
-
-.card:hover::before{
-opacity:1;
-}
-
 .card:hover{
-transform:translateY(-8px) scale(1.03);
+background:#22c55e;
 color:white;
-box-shadow:0 30px 70px rgba(0,0,0,0.2);
+transform:translateY(-5px);
 }
 
-/* RESPONSIVE */
+/* MOBILE */
 @media(max-width:768px){
 .tools{
 grid-template-columns:repeat(2,1fr);
 }
-}
-
-@media(max-width:480px){
-.tools{
-grid-template-columns:1fr;
-}
-}
-
-/* CONTENT */
-.content{
-max-width:800px;
-margin:70px auto;
-padding:20px;
-color:#444;
-line-height:1.8;
-}
-
-.content h2{
-margin-top:30px;
-color:#111;
 }
 
 </style>
@@ -158,12 +88,18 @@ color:#111;
 <!-- NAVBAR -->
 <div class="nav">
 
-<div class="logo">Ecommerce Tools</div>
+<div class="logo">
 
-<div>
-<a href="index.html">Home</a>
-<a href="index.html?section=tools">Tools</a>
-<a href="index.html?section=about">About</a>
+<!-- SVG LOGO -->
+<svg width="28" height="28" viewBox="0 0 24 24">
+<circle cx="12" cy="12" r="10" fill="#facc15"/>
+<path d="M12 2 A10 10 0 0 1 22 12" fill="#ef4444"/>
+<path d="M12 22 A10 10 0 0 1 2 12" fill="#3b82f6"/>
+</svg>
+
+<span style="color:#3b82f6">omni</span>
+<span style="color:#555">tools</span>
+
 </div>
 
 </div>
@@ -171,60 +107,20 @@ color:#111;
 <!-- HERO -->
 <div class="hero">
 <h1>Free Ecommerce Calculators</h1>
-<p>Smart tools to calculate profit, margins, ROAS and scale your business</p>
+<p>Smart tools to calculate profit, margins and ROAS</p>
 </div>
 
 <!-- TOOLS -->
-<div id="tools" class="tools">
+<div class="tools">
 
-<a href="profit-calculator.html" class="card"><span>💰 Profit Calculator</span></a>
-<a href="roas-calculator.html" class="card"><span>📈 ROAS Calculator</span></a>
-<a href="margin-calculator.html" class="card"><span>📊 Margin Calculator</span></a>
-<a href="break-even-calculator.html" class="card"><span>⚖️ Break-even Calculator</span></a>
-<a href="ad-budget-calculator.html" class="card"><span>📢 Ad Budget Calculator</span></a>
-<a href="markup-calculator.html" class="card"><span>🏷️ Markup Calculator</span></a>
-
-</div>
-
-<!-- ABOUT -->
-<div id="about" class="content">
-
-<h2>Free Ecommerce Calculators</h2>
-<p>
-This website provides powerful ecommerce tools to help you understand your numbers, optimize your pricing and grow your online business with confidence.
-</p>
-
-<h2>Why ecommerce calculators are important?</h2>
-<p>
-Running a profitable store requires clear data. These calculators help you make smarter decisions about pricing, ads and margins.
-</p>
-
-<h2>Available tools</h2>
-<ul>
-<li>Profit Calculator</li>
-<li>ROAS Calculator</li>
-<li>Margin Calculator</li>
-<li>Break-even Calculator</li>
-<li>Ad Budget Calculator</li>
-<li>Markup Calculator</li>
-</ul>
+<a href="profit-calculator.html" class="card">💰 Profit Calculator</a>
+<a href="roas-calculator.html" class="card">📈 ROAS Calculator</a>
+<a href="margin-calculator.html" class="card">📊 Margin Calculator</a>
+<a href="break-even-calculator.html" class="card">⚖️ Break-even Calculator</a>
+<a href="ad-budget-calculator.html" class="card">📢 Ad Budget Calculator</a>
+<a href="markup-calculator.html" class="card">🏷️ Markup Calculator</a>
 
 </div>
-
-<!-- SMART SCROLL -->
-<script>
-
-const params = new URLSearchParams(window.location.search);
-const section = params.get("section");
-
-if(section){
-const el = document.getElementById(section);
-if(el){
-el.scrollIntoView({behavior:"smooth"});
-}
-}
-
-</script>
 
 </body>
 </html>
