@@ -3,7 +3,7 @@
 
 <head>
 
-<title>Ecommerce Profit Calculator</title>
+<title>Profit Calculator</title>
 
 <style>
 
@@ -20,138 +20,55 @@ justify-content:space-between;
 align-items:center;
 padding:15px 30px;
 background:white;
-box-shadow:0 2px 10px rgba(0,0,0,0.05);
-}
-
-.nav a{
-text-decoration:none;
-margin-left:20px;
-color:#333;
-font-weight:bold;
+box-shadow:0 4px 15px rgba(0,0,0,0.05);
 }
 
 .logo{
 color:#16a34a;
 font-weight:bold;
-font-size:18px;
+}
+
+/* LINKS */
+.nav a{
+margin-left:20px;
+text-decoration:none;
+color:#333;
+font-weight:bold;
 }
 
 /* HERO */
 .hero{
 text-align:center;
-padding:40px 20px;
+padding:40px;
 }
 
-.hero h1{
-font-size:36px;
-color:#16a34a;
-margin-bottom:10px;
-}
-
-.hero p{
-color:#555;
-font-size:18px;
-}
-
-/* LAYOUT */
-.wrapper{
-display:flex;
-justify-content:center;
-gap:40px;
-flex-wrap:wrap;
-margin-top:20px;
-}
-
-/* CARD */
 .container{
 background:white;
-padding:30px;
-border-radius:12px;
+padding:25px;
+border-radius:10px;
 width:320px;
-box-shadow:0 10px 30px rgba(0,0,0,0.1);
+margin:20px auto;
 }
 
-/* LABEL */
-label{
-display:block;
-margin-top:12px;
-font-weight:bold;
-}
-
-/* INPUT */
 input{
 width:100%;
 padding:10px;
-margin-top:5px;
-border:1px solid #ccc;
-border-radius:6px;
+margin:5px 0;
 }
 
-/* BUTTON */
 button{
-margin-top:15px;
 width:100%;
-padding:12px;
+padding:10px;
 background:#22c55e;
 color:white;
 border:none;
-border-radius:6px;
-font-size:16px;
-cursor:pointer;
+margin-top:10px;
 }
 
-button:hover{
-background:#16a34a;
-}
-
-/* RESULT */
 .result{
-margin-top:15px;
-font-size:22px;
-color:#16a34a;
+margin-top:10px;
 font-weight:bold;
-text-align:center;
-}
-
-/* CONTENT */
-.content{
-background:white;
-padding:30px;
-border-radius:12px;
-max-width:500px;
-box-shadow:0 10px 30px rgba(0,0,0,0.1);
-}
-
-/* RELATED */
-.related{
-text-align:center;
-margin:50px 0;
-}
-
-.tools-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
-gap:15px;
-max-width:600px;
-margin:auto;
-}
-
-.card{
-display:block;
-padding:15px;
-background:white;
-border-radius:10px;
-text-align:center;
-text-decoration:none;
-color:#333;
-box-shadow:0 5px 15px rgba(0,0,0,0.1);
-transition:0.2s;
-}
-
-.card:hover{
-background:#22c55e;
-color:white;
-transform:translateY(-3px);
+color:#16a34a;
 }
 
 </style>
@@ -160,92 +77,33 @@ transform:translateY(-3px);
 
 <body>
 
-<!-- NAVBAR -->
 <div class="nav">
+
 <div class="logo">Ecommerce Tools</div>
+
 <div>
-<a href="#">Home</a>
-<a href="#">Tools</a>
-<a href="#">About</a>
-</div>
+<a href="./index.html">Home</a>
+<a href="./index.html#tools">Tools</a>
+<a href="./index.html#about">About</a>
 </div>
 
-<!-- HERO -->
+</div>
+
 <div class="hero">
-<h1>Ecommerce Profit Calculator</h1>
-<p>Calculate your real profit after all expenses</p>
+<h1>Profit Calculator</h1>
 </div>
-
-<!-- MAIN -->
-<div class="wrapper">
 
 <div class="container">
 
-<label>Selling price</label>
 <input id="price" placeholder="e.g. 50">
-
-<label>Product cost</label>
 <input id="cost" placeholder="e.g. 20">
-
-<label>Shipping cost</label>
 <input id="shipping" placeholder="e.g. 5">
-
-<label>Ad cost</label>
 <input id="ads" placeholder="e.g. 10">
-
-<label>Payment fee (%)</label>
 <input id="fee" placeholder="e.g. 3">
 
-<button onclick="calc()">Calculate Profit</button>
+<button onclick="calc()">Calculate</button>
 
 <div class="result" id="result"></div>
-
-</div>
-
-<div class="content">
-
-<h2>What is ecommerce profit?</h2>
-<p>
-Ecommerce profit is the money you keep after subtracting all costs related to selling a product online.
-</p>
-
-<h3>Formula</h3>
-<p>
-Profit = Selling price − Cost − Shipping − Ads − Fees
-</p>
-
-<h3>Example</h3>
-<p>
-If you sell a product for $50 and your total costs are $35, your profit is $15.
-</p>
-
-<h3>FAQ</h3>
-
-<p><b>How do you calculate ecommerce profit?</b><br>
-Subtract all costs from selling price.</p>
-
-<p><b>Why is profit important?</b><br>
-It tells you if your business is profitable.</p>
-
-<p><b>What is a good profit margin?</b><br>
-20%–40% is common.</p>
-
-</div>
-
-</div>
-
-<!-- RELATED TOOLS -->
-<div class="related">
-
-<h3>Related tools</h3>
-
-<div class="tools-grid">
-
-<a href="margin-calculator.html" class="card">Margin Calculator</a>
-<a href="roas-calculator.html" class="card">ROAS Calculator</a>
-<a href="markup-calculator.html" class="card">Markup Calculator</a>
-
-</div>
 
 </div>
 
@@ -253,17 +111,16 @@ It tells you if your business is profitable.</p>
 
 function calc(){
 
-var price = parseFloat(document.getElementById("price").value) || 0;
-var cost = parseFloat(document.getElementById("cost").value) || 0;
-var shipping = parseFloat(document.getElementById("shipping").value) || 0;
-var ads = parseFloat(document.getElementById("ads").value) || 0;
-var fee = parseFloat(document.getElementById("fee").value) || 0;
+var price=parseFloat(document.getElementById("price").value)||0;
+var cost=parseFloat(document.getElementById("cost").value)||0;
+var shipping=parseFloat(document.getElementById("shipping").value)||0;
+var ads=parseFloat(document.getElementById("ads").value)||0;
+var fee=parseFloat(document.getElementById("fee").value)||0;
 
-var payment = price * (fee / 100);
-var profit = price - cost - shipping - ads - payment;
+var payment=price*(fee/100);
+var profit=price-cost-shipping-ads-payment;
 
-document.getElementById("result").innerHTML =
-"Profit: $" + profit.toFixed(2);
+document.getElementById("result").innerHTML="Profit: $"+profit.toFixed(2);
 
 }
 
