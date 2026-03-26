@@ -11,6 +11,7 @@ body{
 font-family:Arial;
 background:linear-gradient(135deg,#e0f2fe,#f0fdf4);
 margin:0;
+scroll-behavior:smooth;
 }
 
 /* NAVBAR */
@@ -21,13 +22,27 @@ align-items:center;
 padding:18px 30px;
 background:white;
 box-shadow:0 6px 25px rgba(0,0,0,0.05);
+position:sticky;
+top:0;
+z-index:1000;
 }
 
 .logo{
 color:#16a34a;
 font-weight:bold;
 font-size:20px;
-letter-spacing:0.5px;
+}
+
+/* LINKS */
+.nav a{
+margin-left:20px;
+text-decoration:none;
+color:#333;
+font-weight:bold;
+}
+
+.nav a:hover{
+color:#16a34a;
 }
 
 /* HERO */
@@ -41,7 +56,6 @@ font-size:40px;
 background:linear-gradient(90deg,#16a34a,#22c55e);
 -webkit-background-clip:text;
 color:transparent;
-font-weight:bold;
 }
 
 .hero p{
@@ -81,7 +95,6 @@ position:relative;
 overflow:hidden;
 }
 
-/* subtle gradient layer */
 .card::before{
 content:"";
 position:absolute;
@@ -94,13 +107,11 @@ opacity:0;
 transition:0.3s;
 }
 
-/* text above layer */
 .card span{
 position:relative;
 z-index:2;
 }
 
-/* hover */
 .card:hover::before{
 opacity:1;
 }
@@ -144,16 +155,27 @@ color:#111;
 
 <body>
 
+<!-- NAVBAR -->
 <div class="nav">
+
 <div class="logo">Ecommerce Tools</div>
+
+<div>
+<a href="index.html">Home</a>
+<a href="#tools">Tools</a>
+<a href="#about">About</a>
 </div>
 
+</div>
+
+<!-- HERO -->
 <div class="hero">
 <h1>Free Ecommerce Calculators</h1>
 <p>Smart tools to calculate profit, margins, ROAS and scale your business</p>
 </div>
 
-<div class="tools">
+<!-- TOOLS -->
+<div id="tools" class="tools">
 
 <a href="profit-calculator.html" class="card"><span>💰 Profit Calculator</span></a>
 <a href="roas-calculator.html" class="card"><span>📈 ROAS Calculator</span></a>
@@ -164,7 +186,8 @@ color:#111;
 
 </div>
 
-<div class="content">
+<!-- ABOUT -->
+<div id="about" class="content">
 
 <h2>Free Ecommerce Calculators</h2>
 <p>
