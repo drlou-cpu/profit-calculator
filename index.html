@@ -38,12 +38,11 @@ body {
 /* HERO */
 .hero {
   text-align: center;
-  padding: 50px 20px 30px;
+  padding: 40px 20px;
 }
 
 .hero h1 {
-  font-size: 34px;
-  margin-bottom: 10px;
+  font-size: 32px;
 }
 
 .hero p {
@@ -67,7 +66,6 @@ body {
   border-radius: 16px;
   text-align: center;
   box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-  transition: 0.2s;
   cursor: pointer;
 }
 
@@ -75,84 +73,88 @@ body {
   transform: translateY(-4px);
 }
 
-/* ICON */
-.icon {
-  font-size: 28px;
-  margin-bottom: 10px;
-  color: #3a6df0;
+/* CALCULATOR AREA */
+.calculator {
+  max-width: 400px;
+  margin: 40px auto;
+  background: white;
+  padding: 25px;
+  border-radius: 16px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  display: none;
 }
 
-/* TITLE */
-.card h3 {
-  margin: 10px 0 5px;
+input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
 }
 
-/* SUB */
-.card p {
-  color: #888;
-  font-size: 14px;
+button {
+  width: 100%;
+  padding: 12px;
+  background: #3a6df0;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.result {
+  margin-top: 15px;
+  font-weight: bold;
 }
 </style>
 </head>
 
 <body>
 
-<!-- HEADER -->
 <div class="header">
   <div class="logo"></div>
   <div class="brand">Calculator Hub</div>
 </div>
 
-<!-- HERO -->
-<div class="hero">
+<div class="hero" id="home">
   <h1>Your life in numbers</h1>
   <p>Simple calculators to make better decisions</p>
 </div>
 
-<!-- GRID -->
-<div class="grid">
+<div class="grid" id="tools">
 
-  <div class="card" onclick="goTo('profit.html')">
-    <div class="icon">💰</div>
+  <div class="card" onclick="showCalculator()">
+    💰
     <h3>Profit Calculator</h3>
     <p>Calculate your real earnings</p>
   </div>
 
-  <div class="card" onclick="goTo('roas.html')">
-    <div class="icon">📊</div>
-    <h3>ROAS Calculator</h3>
-    <p>Measure ad performance</p>
-  </div>
+</div>
 
-  <div class="card" onclick="goTo('margin.html')">
-    <div class="icon">📉</div>
-    <h3>Margin Calculator</h3>
-    <p>Know your margins</p>
-  </div>
+<!-- CALCULATOR -->
+<div class="calculator" id="profitCalc">
+  <h3>Profit Calculator</h3>
 
-  <div class="card" onclick="goTo('breakeven.html')">
-    <div class="icon">⚖️</div>
-    <h3>Break-even</h3>
-    <p>Find your break-even point</p>
-  </div>
+  <input type="number" id="cost" placeholder="Product Cost">
+  <input type="number" id="price" placeholder="Selling Price">
 
-  <div class="card" onclick="goTo('budget.html')">
-    <div class="icon">💸</div>
-    <h3>Ad Budget</h3>
-    <p>Plan your spending</p>
-  </div>
+  <button onclick="calculateProfit()">Calculate</button>
 
-  <div class="card" onclick="goTo('markup.html')">
-    <div class="icon">🏷️</div>
-    <h3>Markup</h3>
-    <p>Set the right price</p>
-  </div>
-
+  <div class="result" id="result"></div>
 </div>
 
 <script>
-function goTo(page) {
-  window.location.href = page;
+function showCalculator() {
+  document.getElementById("tools").style.display = "none";
+  document.getElementById("profitCalc").style.display = "block";
+}
+
+function calculateProfit() {
+  let cost = document.getElementById("cost").value;
+  let price = document.getElementById("price").value;
+
+  let profit = price - cost;
+
+  document.getElementById("result").innerText =
+    "Profit: " + profit + "$";
 }
 </script>
 
