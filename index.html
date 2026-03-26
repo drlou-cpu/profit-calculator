@@ -1,162 +1,162 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Calculator Hub</title>
 
 <style>
-body {
-  margin: 0;
-  font-family: "Segoe UI", Arial, sans-serif;
-  background: #f7f9fc;
+
+body{
+font-family:Arial;
+margin:0;
+background:#f5f7fb;
 }
 
-/* HEADER */
-.header {
-  display: flex;
-  align-items: center;
-  padding: 15px 25px;
-  background: white;
-  border-bottom: 1px solid #eee;
+/* NAVBAR */
+.nav{
+display:flex;
+align-items:center;
+gap:10px;
+padding:15px 20px;
+background:white;
+box-shadow:0 2px 10px rgba(0,0,0,0.05);
 }
 
-.logo {
-  width: 28px;
-  height: 28px;
-  border-radius: 50%;
-  background: conic-gradient(red, yellow, blue, red);
-  margin-right: 10px;
+.logo-circle{
+width:28px;
+height:28px;
+border-radius:50%;
+background:conic-gradient(red, yellow, blue, red);
 }
 
-.brand {
-  font-size: 20px;
-  font-weight: 600;
-  color: #3a6df0;
+.logo-text{
+font-weight:bold;
+font-size:20px;
+color:#3b82f6;
 }
 
 /* HERO */
-.hero {
-  text-align: center;
-  padding: 40px 20px;
+.hero{
+text-align:center;
+padding:40px 20px;
 }
 
-.hero h1 {
-  font-size: 32px;
+.hero h1{
+font-size:32px;
+margin-bottom:10px;
 }
 
-.hero p {
-  color: #666;
+.hero p{
+color:#666;
 }
 
 /* GRID */
-.grid {
-  max-width: 900px;
-  margin: auto;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 20px;
-  padding: 20px;
+.tools{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:20px;
+padding:20px;
+max-width:900px;
+margin:auto;
 }
 
 /* CARD */
-.card {
-  background: white;
-  padding: 25px;
-  border-radius: 16px;
-  text-align: center;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-  cursor: pointer;
+.card{
+background:white;
+padding:25px;
+border-radius:16px;
+text-align:center;
+text-decoration:none;
+color:#333;
+box-shadow:0 10px 30px rgba(0,0,0,0.08);
+transition:0.3s;
 }
 
-.card:hover {
-  transform: translateY(-4px);
+.card:hover{
+transform:translateY(-5px);
+box-shadow:0 20px 50px rgba(0,0,0,0.15);
 }
 
-/* CALCULATOR AREA */
-.calculator {
-  max-width: 400px;
-  margin: 40px auto;
-  background: white;
-  padding: 25px;
-  border-radius: 16px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-  display: none;
+.card .icon{
+font-size:28px;
+margin-bottom:10px;
 }
 
-input {
-  width: 100%;
-  padding: 10px;
-  margin: 10px 0;
+.card h3{
+margin:5px 0;
 }
 
-button {
-  width: 100%;
-  padding: 12px;
-  background: #3a6df0;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
+.card p{
+color:#777;
+font-size:14px;
 }
 
-.result {
-  margin-top: 15px;
-  font-weight: bold;
+/* MOBILE */
+@media(max-width:768px){
+.tools{
+grid-template-columns:repeat(2,1fr);
 }
+}
+
 </style>
+
 </head>
 
 <body>
 
-<div class="header">
-  <div class="logo"></div>
-  <div class="brand">Calculator Hub</div>
+<!-- NAVBAR -->
+<div class="nav">
+<div class="logo-circle"></div>
+<div class="logo-text">Calculator Hub</div>
 </div>
 
-<div class="hero" id="home">
-  <h1>Your life in numbers</h1>
-  <p>Simple calculators to make better decisions</p>
+<!-- HERO -->
+<div class="hero">
+<h1>Your life in numbers</h1>
+<p>Simple calculators to make better decisions</p>
 </div>
 
-<div class="grid" id="tools">
+<!-- TOOLS -->
+<div class="tools">
 
-  <div class="card" onclick="showCalculator()">
-    💰
-    <h3>Profit Calculator</h3>
-    <p>Calculate your real earnings</p>
-  </div>
+<a href="profit-calculator.html" class="card">
+<div class="icon">💰</div>
+<h3>Profit Calculator</h3>
+<p>Calculate your real earnings</p>
+</a>
+
+<a href="roas-calculator.html" class="card">
+<div class="icon">📈</div>
+<h3>ROAS Calculator</h3>
+<p>Measure ad performance</p>
+</a>
+
+<a href="margin-calculator.html" class="card">
+<div class="icon">📊</div>
+<h3>Margin Calculator</h3>
+<p>Check your margins</p>
+</a>
+
+<a href="break-even-calculator.html" class="card">
+<div class="icon">⚖️</div>
+<h3>Break-even</h3>
+<p>Find your break-even point</p>
+</a>
+
+<a href="ad-budget-calculator.html" class="card">
+<div class="icon">📢</div>
+<h3>Ad Budget</h3>
+<p>Plan your ads</p>
+</a>
+
+<a href="markup-calculator.html" class="card">
+<div class="icon">🏷️</div>
+<h3>Markup</h3>
+<p>Set product pricing</p>
+</a>
 
 </div>
-
-<!-- CALCULATOR -->
-<div class="calculator" id="profitCalc">
-  <h3>Profit Calculator</h3>
-
-  <input type="number" id="cost" placeholder="Product Cost">
-  <input type="number" id="price" placeholder="Selling Price">
-
-  <button onclick="calculateProfit()">Calculate</button>
-
-  <div class="result" id="result"></div>
-</div>
-
-<script>
-function showCalculator() {
-  document.getElementById("tools").style.display = "none";
-  document.getElementById("profitCalc").style.display = "block";
-}
-
-function calculateProfit() {
-  let cost = document.getElementById("cost").value;
-  let price = document.getElementById("price").value;
-
-  let profit = price - cost;
-
-  document.getElementById("result").innerText =
-    "Profit: " + profit + "$";
-}
-</script>
 
 </body>
 </html>
