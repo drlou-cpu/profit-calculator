@@ -112,43 +112,49 @@ body {
 <!-- GRID -->
 <div class="grid">
 
-  <div class="card">
+  <div class="card" onclick="goTo('profit.html')">
     <div class="icon">💰</div>
     <h3>Profit Calculator</h3>
     <p>Calculate your real earnings</p>
   </div>
 
-  <div class="card">
+  <div class="card" onclick="goTo('roas.html')">
     <div class="icon">📊</div>
     <h3>ROAS Calculator</h3>
     <p>Measure ad performance</p>
   </div>
 
-  <div class="card">
+  <div class="card" onclick="goTo('margin.html')">
     <div class="icon">📉</div>
     <h3>Margin Calculator</h3>
     <p>Know your margins</p>
   </div>
 
-  <div class="card">
+  <div class="card" onclick="goTo('breakeven.html')">
     <div class="icon">⚖️</div>
     <h3>Break-even</h3>
     <p>Find your break-even point</p>
   </div>
 
-  <div class="card">
+  <div class="card" onclick="goTo('budget.html')">
     <div class="icon">💸</div>
     <h3>Ad Budget</h3>
     <p>Plan your spending</p>
   </div>
 
-  <div class="card">
+  <div class="card" onclick="goTo('markup.html')">
     <div class="icon">🏷️</div>
     <h3>Markup</h3>
     <p>Set the right price</p>
   </div>
 
 </div>
+
+<script>
+function goTo(page) {
+  window.location.href = page;
+}
+</script>
 
 </body>
 </html>
