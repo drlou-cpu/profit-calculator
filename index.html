@@ -162,8 +162,8 @@ color:#111;
 
 <div>
 <a href="index.html">Home</a>
-<a href="#tools">Tools</a>
-<a href="#about">About</a>
+<a href="index.html?section=tools">Tools</a>
+<a href="index.html?section=about">About</a>
 </div>
 
 </div>
@@ -210,6 +210,21 @@ Running a profitable store requires clear data. These calculators help you make 
 </ul>
 
 </div>
+
+<!-- SMART SCROLL -->
+<script>
+
+const params = new URLSearchParams(window.location.search);
+const section = params.get("section");
+
+if(section){
+const el = document.getElementById(section);
+if(el){
+el.scrollIntoView({behavior:"smooth"});
+}
+}
+
+</script>
 
 </body>
 </html>
