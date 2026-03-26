@@ -3,52 +3,87 @@
 
 <head>
 
-<title>Calculator Hub</title>
+<title>Omni Tools</title>
 
 <style>
 
 body{
 font-family:Arial;
 margin:0;
-background:#f5f7fb;
+background:linear-gradient(135deg,#e0f2fe,#f0fdf4);
+overflow-x:hidden;
+}
+
+/* BACKGROUND SHAPES */
+body::before{
+content:"";
+position:absolute;
+top:-100px;
+left:-100px;
+width:300px;
+height:300px;
+background:#3b82f6;
+border-radius:50%;
+opacity:0.15;
+filter:blur(80px);
+}
+
+body::after{
+content:"";
+position:absolute;
+bottom:-100px;
+right:-100px;
+width:300px;
+height:300px;
+background:#22c55e;
+border-radius:50%;
+opacity:0.15;
+filter:blur(80px);
 }
 
 /* NAVBAR */
 .nav{
 display:flex;
 align-items:center;
-gap:10px;
-padding:15px 20px;
+padding:15px 25px;
 background:white;
-box-shadow:0 2px 10px rgba(0,0,0,0.05);
+box-shadow:0 4px 20px rgba(0,0,0,0.05);
+position:relative;
+z-index:2;
 }
 
-.logo-circle{
-width:28px;
-height:28px;
-border-radius:50%;
-background:conic-gradient(red, yellow, blue, red);
-}
-
-.logo-text{
+/* LOGO */
+.logo{
+display:flex;
+align-items:center;
+gap:8px;
 font-weight:bold;
-font-size:20px;
+}
+
+.logo span:first-child{
 color:#3b82f6;
+}
+
+.logo span:last-child{
+color:#555;
 }
 
 /* HERO */
 .hero{
 text-align:center;
-padding:40px 20px;
+padding:60px 20px 30px;
+position:relative;
+z-index:2;
 }
 
 .hero h1{
-font-size:32px;
-margin-bottom:10px;
+color:#16a34a;
+font-size:34px;
 }
 
 .hero p{
 color:#666;
+margin-top:10px;
 }
 
 /* GRID */
@@ -59,44 +94,46 @@ gap:20px;
 padding:20px;
 max-width:900px;
 margin:auto;
+position:relative;
+z-index:2;
 }
 
 /* CARD */
 .card{
 background:white;
-padding:25px;
-border-radius:16px;
+padding:20px;
+border-radius:14px;
 text-align:center;
 text-decoration:none;
 color:#333;
-box-shadow:0 10px 30px rgba(0,0,0,0.08);
+box-shadow:0 15px 40px rgba(0,0,0,0.08);
 transition:0.3s;
+font-weight:bold;
 }
 
 .card:hover{
 transform:translateY(-5px);
-box-shadow:0 20px 50px rgba(0,0,0,0.15);
+box-shadow:0 25px 60px rgba(0,0,0,0.15);
+background:#22c55e;
+color:white;
 }
 
-.card .icon{
-font-size:28px;
-margin-bottom:10px;
-}
-
-.card h3{
-margin:5px 0;
-}
-
-.card p{
-color:#777;
-font-size:14px;
-}
-
-/* MOBILE */
+/* RESPONSIVE */
 @media(max-width:768px){
 .tools{
 grid-template-columns:repeat(2,1fr);
 }
+}
+
+/* CONTENT (SEO خفيف) */
+.content{
+max-width:700px;
+margin:60px auto;
+padding:20px;
+text-align:center;
+color:#555;
+position:relative;
+z-index:2;
 }
 
 </style>
@@ -107,55 +144,37 @@ grid-template-columns:repeat(2,1fr);
 
 <!-- NAVBAR -->
 <div class="nav">
-<div class="logo-circle"></div>
-<div class="logo-text">Calculator Hub</div>
+
+<div class="logo">
+<span>omni</span>
+<span>tools</span>
+</div>
+
 </div>
 
 <!-- HERO -->
 <div class="hero">
-<h1>Your life in numbers</h1>
-<p>Simple calculators to make better decisions</p>
+<h1>Free Ecommerce Calculators</h1>
+<p>Smart tools to calculate profit, margins and ROAS</p>
 </div>
 
 <!-- TOOLS -->
 <div class="tools">
 
-<a href="profit-calculator.html" class="card">
-<div class="icon">💰</div>
-<h3>Profit Calculator</h3>
-<p>Calculate your real earnings</p>
-</a>
+<a href="profit-calculator.html" class="card">💰 Profit Calculator</a>
+<a href="roas-calculator.html" class="card">📈 ROAS Calculator</a>
+<a href="margin-calculator.html" class="card">📊 Margin Calculator</a>
+<a href="break-even-calculator.html" class="card">⚖️ Break-even Calculator</a>
+<a href="ad-budget-calculator.html" class="card">📢 Ad Budget Calculator</a>
+<a href="markup-calculator.html" class="card">🏷️ Markup Calculator</a>
 
-<a href="roas-calculator.html" class="card">
-<div class="icon">📈</div>
-<h3>ROAS Calculator</h3>
-<p>Measure ad performance</p>
-</a>
+</div>
 
-<a href="margin-calculator.html" class="card">
-<div class="icon">📊</div>
-<h3>Margin Calculator</h3>
-<p>Check your margins</p>
-</a>
-
-<a href="break-even-calculator.html" class="card">
-<div class="icon">⚖️</div>
-<h3>Break-even</h3>
-<p>Find your break-even point</p>
-</a>
-
-<a href="ad-budget-calculator.html" class="card">
-<div class="icon">📢</div>
-<h3>Ad Budget</h3>
-<p>Plan your ads</p>
-</a>
-
-<a href="markup-calculator.html" class="card">
-<div class="icon">🏷️</div>
-<h3>Markup</h3>
-<p>Set product pricing</p>
-</a>
-
+<!-- CONTENT -->
+<div class="content">
+<p>
+Simple ecommerce calculators to help you make better business decisions.
+</p>
 </div>
 
 </body>
